@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+.background {
+    background: linear-gradient(75deg, #3E4645, #223b51, #388150);
+    background-size: 300% 300%;
+    animation: movingGradient 15s ease infinite;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.green-button {
+    display: inline-block;
+    background-color: #24C059;
+    color: white;
+    text-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.562);
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    margin: 4px;
+    padding: 8px 24px;
+    box-shadow: 0px 1px 1.5px rgba(0, 0, 0, 0.082);
+    transition: background-color 0.2s ease;
+}
+
+.green-button:hover {
+    background-color: #1a8d40;
+}
+
+@keyframes movingGradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+}

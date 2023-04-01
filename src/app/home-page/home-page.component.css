@@ -1,0 +1,43 @@
+.center-container{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-title {
+    color: #ffff;
+    font-weight: 500px;
+    font-size: 50px;
+    text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.description {
+    margin-top: 30px;
+    color: #ffffffd3;
+    text-align: center;
+    max-width: 500px;
+    line-height: 18px;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+.get-started {
+    margin-top: 30px;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
