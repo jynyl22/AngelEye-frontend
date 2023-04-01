@@ -1,0 +1,11 @@
+<div class="background">
+    <div class="card-container">
+        <div class="card">
+            <img [src]="preimageUrl" alt="Uploaded image"/>
+        </div>
+        <button class="custom-button"(click)="onProcess()">Process Image</button>
+        <div class="card">
+            <img *ngIf="receivedImage" src="http://localhost:8000/image">
+        </div>
+    </div>
+</div>
