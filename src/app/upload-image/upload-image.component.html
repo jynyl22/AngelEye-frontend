@@ -1,0 +1,22 @@
+<div class="background">
+    <div class="center-container">
+        <ngx-file-drop 
+            *ngIf="showDrop"
+            dropZoneClassName="drop-zone"
+            contentClassName="drop-zone-content"
+            browseBtnClassName="custom-button"
+            dropZoneLabel="Drop files here OR " 
+            (onFileDrop)="dropped($event)" 
+            (onFileOver)="fileOver($event)" 
+            (onFileLeave)="fileLeave($event)"
+            [showBrowseBtn]="true">
+        </ngx-file-drop>
+        
+        <img *ngIf="showImage" [src]="imageUrl" alt="Uploaded image">
+    </div>
+
+    <ng-container class="confirm-image" *ngIf="showImage">
+        <button class="custom-button" (click)="onCancel()">Cancel</button>
+        <button class="custom-button" (click)="onSubmit()">Submit</button>
+    </ng-container>
+</div>
