@@ -1,11 +1,12 @@
 
+
 <div class="background">
     <div class="center-container">
         <div class="quiz-card">
             <div class="quiz-question">{{ currentQuestion().question }}</div>
             <div class="row-images">
                 <img class="quiz-image" src="{{ currentImage() }}">
-                <img *ngIf="submittedAnswer" class="quiz-answer" src="{{ currentImage() }}">
+                <img *ngIf="submittedAnswer" class="quiz-answer" src="{{ currentHeatMap() }}">
             </div>
           <div class="answers-bg">
             <ng-container *ngFor="let answer of currentQuestion().answers">
