@@ -1,13 +1,18 @@
 <div class="background"> 
-    <div class="'container">
-        <h1>{{currentQuestion.question}}</h1>
-        <ul>
-            <li *ngFor="let answer of currentQuestion.answers">
-                <label>
-                    <input type="radio" name="answer" [(ngModel)]="selectedAnswer" [value]="answer">{{ answer}}
-                </label>
-            </li>
-        </ul>
-        <button (click)="submitAnswer()">Submit</button>
+    <div class="center-container">
+        <div class="quiz-card">
+            <div class="quiz-question">{{ currentQuestion().question }}</div>
+            <div class="row-images">
+                <img class="quiz-image" src="{{ currentImage() }}">
+                <img *ngIf="submittedAnswer" class="quiz-answer" src="{{ currentImage() }}">
+            </div>
+            <ng-container *ngFor="let answer of currentQuestion().answers">
+                <input type="radio" name="answer" [(ngModel)]="selectedAnswer" [value]="answer">{{ answer }}
+            </ng-container>"
+            <button class="green-button" (click)="submitAnswer()">Submit</button>
+            <button class="green-button" (click)="nextQuestion()">Next question</button>
+            <button *ngIf="complete" class="green-button" (click)="goBack()">Go Back To Home Page</button>
+
+        </div>
     </div>
 </div>
