@@ -1,4 +1,5 @@
 .logo-title {
+    margin-top: 70px;
     color: #ffff;
     font-weight: 500px;
     font-size: 50px;
@@ -19,6 +20,7 @@
 }
 
 .get-started {
+    text-align: center;
     margin-top: 30px;
     opacity: 0;
     animation: fadeIn 1s ease-in-out forwards;
@@ -31,4 +33,23 @@
     justify-content: center;
     text-align: center;
     color: #c4c4c4;
+}
+
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+    animation-delay: 4s;
+}
+
+.nav-bar a {
+    display: flex;
+    padding: 10px;
+    margin: 20px;
+    color: #e9ecef98;
+  }
+  
+.nav-bar a:hover {
+    color: #24C059;
 }
