@@ -30,3 +30,8 @@
     max-height: 100%;
     object-fit: contain;
 }
+
+.classification {
+    color: black;
+    font-size: 20px;
+}
