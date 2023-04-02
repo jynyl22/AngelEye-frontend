@@ -11,18 +11,31 @@
     overflow: hidden;
 }
 
-.card img {
-    max-width: 120%;
-    max-height: 120%;
+.upload-card img {
+    width: 120%;
+    height: 120%;
     display: block;
 }
 
-.confirm-image {
+.wrapper-image {
+    max-width: 500px; 
+    max-height: 500px; 
+    /* min-width: 200px;  */
+    /* min-height: 200px; */
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
-.drop-label {}
+.image-wrapper img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.confirm-image {
+    display: inline;
+}
 
 @keyframes color {
     0%{

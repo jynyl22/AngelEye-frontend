@@ -33,11 +33,16 @@
                 (onFileLeave)="fileLeave($event)"
                 [showBrowseBtn]="true">
             </ngx-file-drop>
-            <img *ngIf="showImage" [src]="imageUrl" alt="Uploaded image">
+            <div class="wrapper-image">
+                <img *ngIf="showImage" [src]="imageUrl" alt="Uploaded image">
+            </div>
         </div>
+        
+        <ng-container *ngIf="showImage">
+            <div class="confirm-image">
+                <button class="green-button" (click)="onCancel()">Cancel</button>
+                <button class="green-button" (click)="onSubmit()">Submit</button>
+            </div>
+        </ng-container>
     </div>
-    <ng-container class="confirm-image" *ngIf="showImage">
-        <button class="custom-button" (click)="onCancel()">Cancel</button>
-        <button class="custom-button" (click)="onSubmit()">Submit</button>
-    </ng-container>
 </div>
