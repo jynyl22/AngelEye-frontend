@@ -53,7 +53,7 @@ export class UploadImageComponent {
   public onSubmit() {
     const formData = new FormData();
     formData.append('file', this.file, this.file.name);
-    this.http.post('http://localhost:8000/image', formData)
+    this.http.post('http://localhost:8000/uploadfile', formData)
       .subscribe(response => {
     });
     this.router.navigate(['/process'], { queryParams: { imageUrl: this.imageUrl }});
