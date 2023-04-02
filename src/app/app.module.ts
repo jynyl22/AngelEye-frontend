@@ -10,11 +10,16 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { UploadImageComponent } from './upload-image/upload-image.component';
 import { ProcessImageComponent } from './process-image/process-image.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
+import { AboutPageComponent } from './about-page/about-page.component';
+import { SearchEngineComponent } from './search-engine/search-engine.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent },
   { path: 'upload', component: UploadImageComponent },
   { path: 'process', component: ProcessImageComponent },
+  { path: 'about', component: AboutPageComponent },
+  { path: 'search', component: SearchEngineComponent },
   { path: 'quiz', component: QuizPageComponent}
 ]
 
@@ -24,6 +29,9 @@ const routes: Routes = [
     HomePageComponent,
     UploadImageComponent,
     ProcessImageComponent,
+    AboutPageComponent,
+    SearchEngineComponent,
+    SearchBarComponent,
     QuizPageComponent
   ],
   imports: [

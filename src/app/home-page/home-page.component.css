@@ -25,6 +25,14 @@
     animation-delay: 4s;
 }
 
+.link {
+    position: absolute;
+    bottom: 10px;
+    justify-content: center;
+    text-align: center;
+    color: #c4c4c4;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

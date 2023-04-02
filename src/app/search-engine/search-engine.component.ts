@@ -1,20 +1,21 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { NgxFileDropEntry, FileSystemFileEntry, FileSystemDirectoryEntry } from 'ngx-file-drop';
 import { HttpClient } from '@angular/common/http';
+import { Component, Input } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
+import { NgxFileDropEntry } from 'ngx-file-drop';
 
 @Component({
-  selector: 'app-upload-image',
-  templateUrl: './upload-image.component.html',
-  styleUrls: ['./upload-image.component.css']
+  selector: 'app-search-engine',
+  templateUrl: './search-engine.component.html',
+  styleUrls: ['./search-engine.component.css']
 })
-export class UploadImageComponent {
+export class SearchEngineComponent {
   public files: NgxFileDropEntry[] = [];
   public file!: File;
   public imageUrl!: String;
   public showDrop: boolean = true;
   public showImage: boolean = false;
- 
+
   constructor(private http: HttpClient, private router: Router){}
 
   public dropped(files: NgxFileDropEntry[]): void {
