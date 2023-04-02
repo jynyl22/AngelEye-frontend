@@ -1,4 +1,5 @@
-<div class="background"> 
+
+<div class="background">
     <div class="center-container">
         <div class="quiz-card">
             <div class="quiz-question">{{ currentQuestion().question }}</div>
@@ -6,13 +7,18 @@
                 <img class="quiz-image" src="{{ currentImage() }}">
                 <img *ngIf="submittedAnswer" class="quiz-answer" src="{{ currentImage() }}">
             </div>
+          <div class="answers-bg">
             <ng-container *ngFor="let answer of currentQuestion().answers">
-                <input type="radio" name="answer" [(ngModel)]="selectedAnswer" [value]="answer">{{ answer }}
-            </ng-container>"
+              <label class="quiz-answers">
+                <input type="radio" name="answer" [(ngModel)]="selectedAnswer" [value]="answer">
+                {{ answer }}
+              </label>
+            </ng-container>
+          </div>
             <button class="green-button" (click)="submitAnswer()">Submit</button>
             <button class="green-button" (click)="nextQuestion()">Next question</button>
             <button *ngIf="complete" class="green-button" (click)="goBack()">Go Back To Home Page</button>
-
+            <div *ngIf="submittedAnswer" class="answer-text">{{ currentQuestion().correctAnswer }}</div>
         </div>
     </div>
 </div>
