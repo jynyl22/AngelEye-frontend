@@ -1,0 +1,21 @@
+<div class="background">
+    <div class="center-container">
+        <div class="search-row">
+            <app-search-bar/>
+        </div>
+        <div class="card">
+            <ngx-file-drop 
+                *ngIf="showDrop"
+                dropZoneClassName="drop-zone"
+                contentClassName="drop-zone-content"
+                browseBtnClassName="custom-button"
+                dropZoneLabel="Drop files here OR " 
+                (onFileDrop)="dropped($event)" 
+                (onFileOver)="fileOver($event)" 
+                (onFileLeave)="fileLeave($event)"
+                [showBrowseBtn]="true">
+            </ngx-file-drop>
+            <img *ngIf="showImage" src="http://localhost:8000/image">
+        </div>
+    </div>
+</div>
