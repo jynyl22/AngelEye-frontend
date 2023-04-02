@@ -1,5 +1,8 @@
-<div class="background">
-    <div class="center-container">
+<div class="container">
+    <div class="card">
+        <div class="directions">
+            
+        </div>
         <ngx-file-drop 
             *ngIf="showDrop"
             dropZoneClassName="drop-zone"
@@ -11,7 +14,6 @@
             (onFileLeave)="fileLeave($event)"
             [showBrowseBtn]="true">
         </ngx-file-drop>
-        
         <img *ngIf="showImage" [src]="imageUrl" alt="Uploaded image">
     </div>
 
