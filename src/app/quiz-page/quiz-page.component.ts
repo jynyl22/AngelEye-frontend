@@ -16,31 +16,37 @@ export class QuizPageComponent {
   constructor(private router: Router){}
 
   quizImages = [
-    'assets/quiz-images/one.png',
-    'assets/quiz-images/two.png',
-    'assets/quiz-images/three.png',
-    'assets/quiz-images/four.jpg',
+    'assets/quiz1.png',
+    'assets/quiz2.png',
+    'assets/quiz3.png',
+    'assets/quiz4.jpeg',
   ];
+  heatImages = [
+    'assets/heat1.jpg',
+    'assets/heat2.jpg',
+    'assets/heat3.jpg',
+    'assets/heat4.jpg',
+  ]
   quizQuestions = [
     {
       question: 'What disease does this detect?',
-      answers: ['Covid-19', 'Pneumonia', 'Lung cancer', 'Emphysema'],
-      correctAnswer: 'Pneumonia'
-    },
-    {
-      question: 'What disease does this detect?',
-      answers: ['Covid-19', 'Pneumonia', 'Lung cancer', 'Emphysema'],
+      answers: ['Covid-19', 'Pneumonia', 'Normal'],
       correctAnswer: 'Covid-19'
     },
     {
       question: 'What disease does this detect?',
-      answers: ['Covid-19', 'Pneumonia', 'Lung cancer', 'Emphysema'],
-      correctAnswer: 'Lung  cancer'
+      answers: ['Covid-19', 'Pneumonia', 'Normal'],
+      correctAnswer: 'Covid-19'
     },
     {
       question: 'What disease does this detect?',
-      answers: ['Covid-19', 'Pneumonia', 'Lung cancer', 'Emphysema'],
-      correctAnswer: 'Emphysema'
+      answers: ['Covid-19', 'Pneumonia', 'Normal'],
+      correctAnswer: 'Normal'
+    },
+    {
+      question: 'What disease does this detect?',
+      answers: ['Covid-19', 'Pneumonia', 'Normal'],
+      correctAnswer: 'Pneumonia'
     }
   ];
 
@@ -50,6 +56,9 @@ export class QuizPageComponent {
 
   currentImage() {
     return this.quizImages[this.currentQuestionIndex];
+  }
+  currentHeatMap() {
+    return this.heatImages[this.currentQuestionIndex];
   }
 
   submitAnswer() {
@@ -78,3 +87,4 @@ export class QuizPageComponent {
     this.router.navigate(['']);
   }
 }
+
