@@ -1,2 +1,57 @@
-.search-row {
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+
+.bold-green{
+    font-weight: bold;
+    color: #24C059;
+}
+
+.wrapper-image {
+    max-width: 200px; 
+    max-height: 200px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.wrapper-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.large-text {
+    font-size: 25px;
+    color: #ffff;
+}
+
+.break {
+    display: block;
+    content: "";
+    margin-top: 3em;
+    color: #24C059;
+  }
+  
+.summary{
+    font-size: 10px;
+    color: #ffff;
+}
+
+a {
+    color: #ffff;
 }

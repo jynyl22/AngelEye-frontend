@@ -1,9 +1,8 @@
 .wrapper-image {
-    max-width: 500px; 
-    max-height: 500px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-width: 200px; 
+    max-height: 200px; 
+    display: absolute;
+    left: 50px;
 }
 
 .wrapper-image img {

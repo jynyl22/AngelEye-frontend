@@ -1,21 +1,35 @@
 <div class="background">
     <div class="center-container">
-        <div class="search-row">
-            <app-search-bar/>
+        <div class="title"><span class="bold-green">Search </span>your scan</div>
+        <ngx-file-drop 
+            *ngIf="showDrop"
+            dropZoneClassName="drop-zone"
+            contentClassName="drop-zone-content"
+            browseBtnClassName="browse-button"
+            [dropZoneLabel]="'Drop files here\nor'" 
+            (onFileDrop)="dropped($event)" 
+            (onFileOver)="fileOver($event)" 
+            (onFileLeave)="fileLeave($event)"
+            [showBrowseBtn]="true">
+        </ngx-file-drop>
+        <div class="row">
+            <div class="wrapper-image">
+                <img *ngIf="showImage" [src]="imageUrl" alt="Uploaded image">
+            </div>
+            <button class="generate" (click)="onGenerate()">Generate</button>
+    
         </div>
-        <div class="card">
-            <ngx-file-drop 
-                *ngIf="showDrop"
-                dropZoneClassName="drop-zone"
-                contentClassName="drop-zone-content"
-                browseBtnClassName="custom-button"
-                dropZoneLabel="Drop files here OR " 
-                (onFileDrop)="dropped($event)" 
-                (onFileOver)="fileOver($event)" 
-                (onFileLeave)="fileLeave($event)"
-                [showBrowseBtn]="true">
-            </ngx-file-drop>
-            <img *ngIf="showImage" src="http://localhost:8000/image">
+        <div class="large-text">Classification: {{ prediction }}</div>
+
+        <div class="column">
+            <div class="large-text">Summary</div>
+            <div class="summary">{{ summary }} </div>
+
+            <li *ngFor="let link of links">
+                <a href="{{ link }}" target="_blank">{{ link }}</a>
+            </li>
         </div>
+
+        <a class="link" target="_self" routerLink="/">Home</a>
     </div>
 </div>

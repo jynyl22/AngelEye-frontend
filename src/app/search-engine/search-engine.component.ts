@@ -4,6 +4,12 @@ import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NgxFileDropEntry } from 'ngx-file-drop';
 
+interface JSONResponse {
+  pred: string;
+  summary: string;
+  links: string[];
+}
+
 @Component({
   selector: 'app-search-engine',
   templateUrl: './search-engine.component.html',
@@ -15,6 +21,10 @@ export class SearchEngineComponent {
   public imageUrl!: String;
   public showDrop: boolean = true;
   public showImage: boolean = false;
+
+  prediction!: string;
+  summary!: string;
+  links!: string[];
 
   constructor(private http: HttpClient, private router: Router){}
 
@@ -37,6 +47,12 @@ export class SearchEngineComponent {
     }
     this.showDrop = false;
     this.showImage = true;
+
+    const formData = new FormData();
+    formData.append('file', this.file, this.file.name);
+    this.http.post('http://localhost:8000/uploadfile', formData)
+      .subscribe(response => {
+    });
   }
  
   public fileOver(event: any){
@@ -51,12 +67,12 @@ export class SearchEngineComponent {
     this.showImage = false;
   }
 
-  public onSubmit() {
-    const formData = new FormData();
-    formData.append('file', this.file, this.file.name);
-    this.http.post('http://localhost:8000/image', formData)
-      .subscribe(response => {
-    });
-    this.router.navigate(['/process'], { queryParams: { imageUrl: this.imageUrl }});
+  public onGenerate() {
+    this.http.get<JSONResponse>('http://localhost:8000/search_desc_GET')
+    .subscribe(data => {
+      this.prediction = data.pred;
+      this.summary = data.summary;
+      this.links = data.links;
+    })
   }
 }
