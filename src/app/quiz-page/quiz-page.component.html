@@ -1,0 +1,13 @@
+<div class="background"> 
+    <div class="'container">
+        <h1>{{currentQuestion.question}}</h1>
+        <ul>
+            <li *ngFor="let answer of currentQuestion.answers">
+                <label>
+                    <input type="radio" name="answer" [(ngModel)]="selectedAnswer" [value]="answer">{{ answer}}
+                </label>
+            </li>
+        </ul>
+        <button (click)="submitAnswer()">Submit</button>
+    </div>
+</div>
