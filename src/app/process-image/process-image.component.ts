@@ -17,7 +17,8 @@ export class ProcessImageComponent {
   public preimageUrl: String = '';
   public safeImageUrl: SafeUrl = '';
   public receivedImage: boolean = false;
-  public prediction: String = '';
+  
+  prediction!: String;
 
   constructor(private route: ActivatedRoute, private http: HttpClient, private sanitizer: DomSanitizer) {}
 
@@ -29,10 +30,9 @@ export class ProcessImageComponent {
 
   onProcess() {
     this.receivedImage = true;
-    this.http.get<JSONResponse>('http://localhost:8000/predict').subscribe((data) => {
+    this.http.get<JSONResponse>('http://localhost:8000/predict')
+    .subscribe(data => {
       this.prediction = data.pred;
     });
-
-    console.log(this.prediction);
   }
 }
